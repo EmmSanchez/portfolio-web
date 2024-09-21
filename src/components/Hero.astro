@@ -1,0 +1,22 @@
+---
+import { basics } from "../cv.json";
+
+const { greeting, label, summary } = basics;
+---
+
+<section class="flex py-44">
+  <div class="max-w-3xl mx-auto">
+    <div>
+      <h1 class="text-4xl font-bold mb-1">{greeting}</h1>
+      <h2 class="text-lg font-semibold opacity-50 mb-2">{label}</h2>
+      <p class="max-w-xl text-lg text-zinc-200 font-medium">
+        Tengo más de 2 años desarrollando páginas web. Actualmente estoy
+        cursando una
+        <span class="text-amber-300">
+          Ingeniería en Tecnología de Software
+        </span>
+        en la Universidad Autónoma de Nuevo León.
+      </p>
+    </div>
+  </div>
+</section>
