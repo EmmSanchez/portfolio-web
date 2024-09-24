@@ -1,22 +1,62 @@
 ---
 import { basics } from "../cv.json";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import SocialPill from "./SocialPill.astro";
 
 const { greeting, label, summary } = basics;
 ---
 
 <section class="flex py-44">
-  <div class="max-w-3xl mx-auto">
+  <div
+    class="flex flex-row max-w-5xl mx-auto justify-center items-center gap-16"
+  >
     <div>
       <h1 class="text-4xl font-bold mb-1">{greeting}</h1>
-      <h2 class="text-lg font-semibold opacity-50 mb-2">{label}</h2>
-      <p class="max-w-xl text-lg text-zinc-200 font-medium">
+      <h2
+        class="text-lg mb-5 mt-2 text-transparent font-bold bg-gradient-to-br from-purple-400 to-blue-500 bg-clip-text"
+      >
+        {label}
+      </h2>
+      <p class="max-w-2xl text-xl text-zinc-200 font-medium">
         Tengo más de 2 años desarrollando páginas web. Actualmente estoy
         cursando una
-        <span class="text-amber-300">
+        <span class="text-amber-200">
           Ingeniería en Tecnología de Software
         </span>
         en la Universidad Autónoma de Nuevo León.
       </p>
+      <ul class="flex gap-4 py-4">
+        <li>
+          <SocialPill
+            href="https://www.linkedin.com/in/emmanuel-sanchez-6a9998241"
+          >
+            <LinkedInIcon class="w-4 h-4" />
+            <p>LinkedIn</p>
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href="https://github.com/EmmSanchez">
+            <GitHubIcon class="w-4 h-4" />
+            <p>GitHub</p>
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill>
+            <MailIcon class="w-4 h-4" />
+            <p>emmsanchezaranda@hotmail.com</p>
+          </SocialPill>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="h-52 w-52 rounded-xl overflow-hidden transition duration-300 hover:scale-105"
+    >
+      <img
+        src="https://unavatar.io/github/emmsanchez"
+        alt="EmmSanchez Avatar"
+      />
     </div>
   </div>
 </section>
