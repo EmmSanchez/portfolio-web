@@ -2,32 +2,32 @@
 import { basics } from "../cv.json";
 import LinkedInIcon from "../icons/LinkedIn.astro";
 import GitHubIcon from "../icons/GitHub.astro";
-import MailIcon from "../icons/Mail.astro";
+import SendIcon from "../icons/SendIcon.astro";
+import CopyIcon from "../icons/CopyIcon.astro";
 import SocialPill from "./SocialPill.astro";
+import CheckIcon from "../icons/CheckIcon.astro";
 
 const { greeting, label, summary } = basics;
 ---
 
-<section class="flex py-44">
-  <div
-    class="flex flex-row max-w-5xl mx-auto justify-center items-center gap-16"
-  >
+<section class="flex pt-32 pb-28">
+  <div class="flex flex-row mx-auto justify-center items-center gap-16">
     <div>
-      <h1 class="text-4xl font-bold mb-1">{greeting}</h1>
-      <h2
-        class="text-lg mb-5 mt-2 text-transparent font-bold bg-gradient-to-br from-purple-400 to-blue-500 bg-clip-text"
+      <h1
+        class="gradient-text text-6xl font-extrabold mb-1 text-transparent animate-gradient"
       >
+        {greeting}
+      </h1>
+      <h2 class="text-lg mb-5 mt-2 font-bold opacity-60">
         {label}
       </h2>
-      <p class="max-w-2xl text-xl text-zinc-200 font-medium">
-        Tengo más de 2 años desarrollando páginas web. Actualmente estoy
-        cursando una
-        <span class="text-amber-200">
-          Ingeniería en Tecnología de Software
-        </span>
+      <p class="max-w-2xl text-2xl text-zinc-50 font-medium">
+        Tengo más de 2 años creando páginas web. Actualmente estoy cursando una
+        <span class="text-sky-400"> Ingeniería en Tecnología de Software </span>
         en la Universidad Autónoma de Nuevo León.
       </p>
-      <ul class="flex gap-4 py-4">
+
+      <ul class="flex gap-4 py-6">
         <li>
           <SocialPill
             href="https://www.linkedin.com/in/emmanuel-sanchez-6a9998241"
@@ -42,16 +42,29 @@ const { greeting, label, summary } = basics;
             <p>GitHub</p>
           </SocialPill>
         </li>
-        <li>
-          <SocialPill>
-            <MailIcon class="w-4 h-4" />
+        <li
+          class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-3xl overflow-hidden"
+        >
+          <a
+            class="flex justify-center items-center gap-2 px-4 py-2 transition-all ease-out hover:bg-zinc-900 hover:cursor-pointer"
+            href="mailto:emmsanchezaranda@hotmail.com"
+          >
+            <SendIcon class="size-4" />
             <p>emmsanchezaranda@hotmail.com</p>
-          </SocialPill>
+          </a>
+          <button
+            class="px-3 py-3 border-solid border-l-[1px] border-zinc-700 transition hover:bg-zinc-500 hover:cursor-pointer"
+            id="copyButton"
+          >
+            <CopyIcon id="default-icon" class="size-4" />
+            <CheckIcon id="success-icon" class="hidden size-4" />
+          </button>
         </li>
       </ul>
     </div>
+
     <div
-      class="h-52 w-52 rounded-xl overflow-hidden transition duration-300 hover:scale-105"
+      class="size-56 rounded-3xl overflow-hidden transition duration-300 hover:scale-105"
     >
       <img
         src="https://unavatar.io/github/emmsanchez"
@@ -60,3 +73,44 @@ const { greeting, label, summary } = basics;
     </div>
   </div>
 </section>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(
+      to right,
+      #2af598,
+      #06b6d4,
+      #009efd,
+      #2af598,
+      #06b6d4,
+      #009efd
+    );
+    background-clip: text;
+    background-size: 300% 300%;
+  }
+</style>
+
+<script>
+  let checkIcon = document.getElementById("success-icon");
+  let clipboardIcon = document.getElementById("default-icon");
+  let copyButton = document.getElementById("copyButton");
+
+  copyButton?.addEventListener("click", async () => {
+    try {
+      const text = "emmsanchezaranda@hotmail.com";
+      await navigator.clipboard.writeText(text);
+
+      clipboardIcon?.classList.add("hidden");
+      checkIcon?.classList.remove("hidden");
+      copyButton.classList.add("bg-zinc-500");
+
+      setTimeout(() => {
+        checkIcon?.classList.add("hidden");
+        clipboardIcon?.classList.remove("hidden");
+        copyButton.classList.remove("bg-zinc-500");
+      }, 2000);
+    } catch (error) {
+      console.error("Error al copiar al portapapeles", error);
+    }
+  });
+</script>
