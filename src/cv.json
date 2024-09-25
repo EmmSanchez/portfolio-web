@@ -122,14 +122,193 @@
   ],
   "projects": [
     {
-      "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "Description...",
-      "highlights": [
-        "Won award at AIHacks 2016"
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
       ],
-      "url": "https://project.com/"
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
+    },
+    {
+      "id": 1,
+      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
+      "shortTitle": "Gestor de usuarios",
+      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
+      "shortDescription": "Plataforma para gestionar pruebas físicas policiales, con autenticación, carga de Excel, operaciones CRUD, filtrado y ordenamiento.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Excel.js",
+        "Express",
+        "JWT"
+      ],
+      "link": "https://enlace-del-proyecto.com",
+      "repository": "https://github.com/usuario/proyecto-policias",
+      "image": "https://ruta-de-la-imagen.com/proyecto-policias.jpg",
+      "date": "2023-01-15",
+      "tags": [
+        "Backend",
+        "Frontend",
+        "Autenticación",
+        "CRUD",
+        "Excel"
+      ],
+      "status": "completado"
     }
   ]
 }

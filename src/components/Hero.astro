@@ -11,7 +11,7 @@ const { greeting, label, summary } = basics;
 ---
 
 <section class="flex pt-32 pb-28">
-  <div class="flex flex-row mx-auto justify-center items-center gap-16">
+  <div class="flex flex-row w-full mx-auto justify-between items-center gap-8">
     <div>
       <h1
         class="gradient-text text-6xl font-extrabold mb-1 text-transparent animate-gradient"
@@ -43,17 +43,17 @@ const { greeting, label, summary } = basics;
           </SocialPill>
         </li>
         <li
-          class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-3xl overflow-hidden"
+          class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-3xl"
         >
           <a
-            class="flex justify-center items-center gap-2 px-4 py-2 transition-all ease-out hover:bg-zinc-900 hover:cursor-pointer"
+            class="flex justify-center items-center gap-2 px-4 py-2 rounded-l-3xl transition-all ease-out hover:bg-zinc-900 hover:cursor-pointer"
             href="mailto:emmsanchezaranda@hotmail.com"
           >
             <SendIcon class="size-4" />
             <p>emmsanchezaranda@hotmail.com</p>
           </a>
           <button
-            class="px-3 py-3 border-solid border-l-[1px] border-zinc-700 transition hover:bg-zinc-500 hover:cursor-pointer"
+            class="px-3 py-3 border-solid border-l-[1px] rounded-r-3xl border-zinc-700 transition hover:bg-zinc-500 hover:cursor-pointer"
             id="copyButton"
           >
             <CopyIcon id="default-icon" class="size-4" />

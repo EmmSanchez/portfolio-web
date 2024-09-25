@@ -1,14 +1,14 @@
 ---
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import Projects from "../components/Projects.astro";
 import Layout from "../layouts/Layout.astro";
+import { Projects } from "../components/Projects";
 ---
 
 <Layout title="Portafolio de EmmSanchez - Desarrollador Web Junior">
   <main class="max-w-5xl mx-auto">
     <Header />
     <Hero />
-    <Projects />
+    <Projects client:load />
   </main>
 </Layout>
