@@ -1,3 +1,24 @@
 .custom-mask {
-  mask-image: linear-gradient(black 70%, transparent);
+  mask-image: linear-gradient(black 80%, black 85%, transparent);
+}
+.shadow-inset {
+  background: radial-gradient(
+    circle at 80% center,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  div {
+    grid-column: span 2;
+
+    &:nth-child(4n + 4) {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  }
 }
