@@ -7,9 +7,6 @@ export default {
 	plugins: [],
 	theme: {
 		extend: {
-			gridTemplateColumns: {
-				"auto-fit": 'repeat(3, minmax(280px, 1fr))', 
-			},
 			keyframes: {
 				gradient: {
 					"0%": {backgroundPosition: "0% 50%"},
