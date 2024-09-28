@@ -9,7 +9,6 @@ interface Project {
   shortDescription: string;
   technologies: {
     name: string;
-    class: string;
     icon: string;
     icon_alt: string;
   }[];
@@ -22,21 +21,33 @@ interface Project {
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
     icon: "/icons/nextjs_icon.svg",
     icon_alt: "Next.js Logo"
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
     icon: "/icons/tailwindcss.svg",
     icon_alt: "Tailwind Logo"
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-white text-[#3178c6]",
     icon: "/icons/typescript.svg",
     icon_alt: "TypeScript Logo"
+  },
+  REACT: {
+    name: "React",
+    icon: "/icons/react.svg",
+    icon_alt: "React Logo"
+  },
+  MONGODB: {
+    name: "MongoDB",
+    icon: "/icons/mongodb.svg",
+    icon_alt: "MongoDB Logo"
+  },
+  ELECTRON: {
+    name: "Electron",
+    icon: "/icons/electron.svg",
+    icon_alt: "Electron Logo"
   }
 }
 
@@ -51,6 +62,7 @@ const PROJECTS = [
       TAGS.NEXT,
       TAGS.TYPESCRIPT,
       TAGS.TAILWIND,
+      TAGS.MONGODB
     ],
     "link": "https://enlace-del-proyecto.com",
     "repository": "https://github.com/usuario/proyecto-policias",
@@ -58,7 +70,25 @@ const PROJECTS = [
     "mockup": "/images/datasheet_manager_3x.webp",
     "image_alt": "Imagen de la aplicación DataSheet Manager",
     "status": "completado"
-  }
+  },
+  {
+    "id": 2,
+    "title": "Aplicacion de Preguntas",
+    "shortTitle": "Quizz App",
+    "description": "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, gran UI y con alateoridad de preguntas con resultados final.",
+    "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
+    "technologies": [
+      TAGS.REACT,
+      TAGS.ELECTRON,
+      TAGS.TAILWIND,
+    ],
+    "link": "https://enlace-del-proyecto.com",
+    "repository": "https://github.com/usuario/proyecto-policias",
+    "image": "/images/ejemplo.png",
+    "mockup": "/images/ejemplo.png",
+    "image_alt": "Imagen de la aplicación DataSheet Manager",
+    "status": "completado"
+  },
 ]
 
 export function Projects() {
@@ -76,7 +106,7 @@ export function Projects() {
       setSelectedId(id) 
       setIsFading(false)
 
-    }, 150) 
+    }, 250) 
   }
 
   useEffect(() => {
@@ -94,29 +124,29 @@ export function Projects() {
 
       <div className="w-full rounded-2xl shadow-[0px_-20px_30px_-22px_rgba(0,0,0,0.3)] shadow-zinc-500/20 bg-gradient-to-b from-zinc-900 via-zinc-900 via-30% to-transparent">
         {/* Selected Project */}
-        <div className="relative w-full h-[420px] rounded-t-2xl -mb-4 overflow-hidden">
+        <div className="relative w-full h-[460px] rounded-t-2xl -mb-4 overflow-hidden">
           <img
             src={selectedProject?.image}
             alt={selectedProject?.image_alt}
-            className={`relative z-0 opacity-50 size-full object-cover rounded-t-xl transition-opacity duration-500 ease-in-out custom-mask ${isFading ? 'opacity-20' : 'opacity-100'}`}
+            className={`relative z-0 size-full object-cover rounded-t-xl transition-all duration-500 ease-in-out custom-mask ${isFading ? 'opacity-20 scale-100' : 'opacity-100 scale-105'}`}
           />
           
           <div className="absolute top-0 size-full rounded-t-xl shadow-inset"></div>
 
-          <div className="absolute top-0 flex flex-col justify-end items-start z-10 w-full h-full px-8 py-10">
+          <div className={`absolute top-0 flex flex-col justify-end transition-transform duration-500 items-start z-10 w-full h-full px-8 py-10 ${isFading ? 'opacity-0 -translate-x-4' : 'opacity-100 translate-x-0'}`}>
             <h3 className="text-2xl whitespace-nowrap font-extrabold mb-2">{selectedProject?.title}</h3>
-            <p className="text-base max-w-2xl mb-4">{selectedProject.description}</p>
-            <ul className="flex gap-4 mb-6">
+            <p className="text-base max-w-xl mb-2">{selectedProject.description}</p>
+            <ul className="flex gap-1 mb-2">
               {selectedProject.technologies.map((tech, index) => {
                 return (
-                  <li key={index} className={`${tech.class} flex h-7 justify-between items-center px-3 gap-2 rounded-full`}>
-                    <img src={tech.icon} alt={tech.icon_alt} className="size-5"/>
-                    <p className="text-xs font-semibold">{tech.name}</p>
+                  <li key={index} className={`flex justify-between items-center p-2 gap-2 rounded-full`}>
+                    <img src={tech.icon} alt={tech.icon_alt} className="size-6"/>
+                    {/* <p className="text-xs font-semibold">{tech.name}</p> */}
                   </li>
                 )
               })}
             </ul>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap gap-4 mb-4">
               <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-4 py-2 text-sm font-medium rounded-md">
                 <img src="/icons/external-link.svg" alt="External Link Icon" />
                 <a href="https://read-excel-page.vercel.app/">Ver Demo</a>
