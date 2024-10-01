@@ -12,8 +12,8 @@ interface Project {
     icon: string;
     icon_alt: string;
   }[];
-  link: string;
-  repository: string;
+  link?: string;
+  repository?: string;
   image: string;
   image_alt: string;
 }
@@ -48,6 +48,11 @@ const TAGS = {
     name: "Electron",
     icon: "/icons/electron.svg",
     icon_alt: "Electron Logo"
+  },
+  VITE: {
+    name: "Vite.js",
+    icon: "/icons/vitejs.svg",
+    icon_alt: "Vite.js Logo"
   }
 }
 
@@ -64,9 +69,8 @@ const PROJECTS = [
       TAGS.TAILWIND,
       TAGS.MONGODB
     ],
-    "link": "https://enlace-del-proyecto.com",
-    "repository": "https://github.com/usuario/proyecto-policias",
-    "image": "/images/datasheet_manager_3x.webp",
+    "link": "https://read-excel-page.vercel.app/",
+    "image": "/images/datasheet_manager_black.webp",
     "mockup": "/images/datasheet_manager_3x.webp",
     "image_alt": "Imagen de la aplicación DataSheet Manager",
     "status": "completado"
@@ -75,15 +79,16 @@ const PROJECTS = [
     "id": 2,
     "title": "Aplicacion de Preguntas",
     "shortTitle": "Quizz App",
-    "description": "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, gran UI y con alateoridad de preguntas con resultados final.",
+    "description": "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
     "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
     "technologies": [
+      TAGS.VITE,
       TAGS.REACT,
-      TAGS.ELECTRON,
       TAGS.TAILWIND,
+      TAGS.ELECTRON,
     ],
     "link": "https://enlace-del-proyecto.com",
-    "repository": "https://github.com/usuario/proyecto-policias",
+    "repository": "https://github.com/EmmSanchez/quiz-app",
     "image": "/images/ejemplo.png",
     "mockup": "/images/ejemplo.png",
     "image_alt": "Imagen de la aplicación DataSheet Manager",
@@ -128,7 +133,7 @@ export function Projects() {
           <img
             src={selectedProject?.image}
             alt={selectedProject?.image_alt}
-            className={`relative z-0 size-full object-cover rounded-t-xl transition-all duration-500 ease-in-out custom-mask ${isFading ? 'opacity-20 scale-100' : 'opacity-100 scale-105'}`}
+            className={`relative z-0 size-full object-cover rounded-t-xl transition-all duration-500 ease-in-out custom-mask ${isFading ? 'opacity-20' : 'opacity-100 scale-100'}`}
           />
           
           <div className="absolute top-0 size-full rounded-t-xl shadow-inset"></div>
@@ -141,20 +146,27 @@ export function Projects() {
                 return (
                   <li key={index} className={`flex justify-between items-center p-2 gap-2 rounded-full`}>
                     <img src={tech.icon} alt={tech.icon_alt} className="size-6"/>
-                    {/* <p className="text-xs font-semibold">{tech.name}</p> */}
                   </li>
                 )
               })}
             </ul>
             <div className="flex flex-row flex-wrap gap-4 mb-4">
-              <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-4 py-2 text-sm font-medium rounded-md">
-                <img src="/icons/external-link.svg" alt="External Link Icon" />
-                <a href="https://read-excel-page.vercel.app/">Ver Demo</a>
-              </button>
-              <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-4 py-2 text-sm font-medium rounded-md">
-                <img src="/icons/brand-github.svg" alt="Github Brand Icon" />
-                <a href="https://github.com/EmmSanchez/read-excel-page">Repositorio de GitHub</a>
-              </button>
+              {
+                selectedProject.link && (
+                  <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-4 py-2 text-sm font-medium rounded-md transition hover:bg-zinc-900">
+                    <img src="/icons/external-link.svg" alt="External Link Icon" />
+                    <a href={selectedProject.link} target="_blank">Ver Demo</a>
+                  </button>
+                )
+              }
+              {
+                selectedProject.repository && (
+                  <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-4 py-2 text-sm font-medium rounded-md">
+                    <img src="/icons/brand-github.svg" alt="Github Brand Icon" />
+                    <a href={selectedProject.repository} target="_blank">Repositorio de GitHub</a>
+                  </button>
+                )
+              }
             </div>
           </div>
         </div>
