@@ -10,17 +10,18 @@ import CheckIcon from "../icons/CheckIcon.astro";
 const { greeting, label, summary } = basics;
 ---
 
-<section class="flex pt-32 pb-28 max-[1024px]:pt-16">
+<section class="flex pt-32 pb-28 max-[1024px]:pt-16 max-[1024px]:pb-2">
   <div class="flex flex-row max-[940px]:flex-col w-full mx-auto justify-between items-center gap-8 max-[1024px]:gap-4">
     <div>
       <div class="flex flex-col">
         <div class="flex gap-8 items-center">
           <div
-            class="size-14 mb-5 min-[941px]:hidden rounded-xl overflow-hidden transition duration-300 hover:scale-105"
+            class="size-14 sm:mb-5 min-[941px]:hidden transition duration-300 hover:scale-105"
           >
             <img
               src="https://unavatar.io/github/emmsanchez"
               alt="EmmSanchez Avatar"
+              class="rounded-xl"
             />
           </div>
           <div class="flex-col">
@@ -34,41 +35,41 @@ const { greeting, label, summary } = basics;
             </h2>
           </div>
         </div>
-        <p class="max-w-2xl text-2xl max-[940px]:text-xl text-zinc-50 font-medium">
+        <p class="max-w-2xl text-2xl max-[940px]:text-lg text-zinc-50 font-medium">
           Tengo más de 2 años creando páginas web. Actualmente estoy cursando una
           <span class="text-sky-400"> Ingeniería en Tecnología de Software </span>
           en la Universidad Autónoma de Nuevo León.
         </p>
       </div>
 
-      <ul class="flex flex-wrap gap-4 py-6 max-sm:py-4">
+      <ul class="flex flex-wrap gap-2 sm:gap-4 py-2 sm:py-6 max-sm:py-4">
         <li>
           <SocialPill
             href="https://www.linkedin.com/in/emmanuel-sanchez-6a9998241"
           >
-            <LinkedInIcon class="w-4 h-4" />
+            <LinkedInIcon class="size-4" />
             <p class="max-sm:hidden">LinkedIn</p>
           </SocialPill>
         </li>
         <li>
           <SocialPill href="https://github.com/EmmSanchez">
-            <GitHubIcon class="w-4 h-4" />
+            <GitHubIcon class="size-4" />
             <p class="max-sm:hidden">GitHub</p>
           </SocialPill>
         </li>
         <li
-          class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-3xl"
+          class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-xl sm:rounded-3xl"
         >
           <a
-            class="flex justify-center items-center gap-2 px-4 py-2 rounded-l-3xl transition-all ease-out hover:bg-zinc-900 hover:cursor-pointer"
+            class="flex justify-center items-center gap-2 px-4 py-2 rounded-l-xl sm:rounded-l-3xl transition-all ease-out hover:bg-zinc-900 hover:cursor-pointer"
             href="mailto:emmsanchezaranda@hotmail.com"
           >
             <SendIcon class="size-4" />
             <p class="max-[660px]:hidden">emmsanchezaranda@hotmail.com</p>
-            <p class="min-[661px]:hidden">Contáctame</p>
+            <p class="text-xs min-[661px]:hidden">Contáctame</p>
           </a>
           <button
-            class="px-3 py-3 border-solid border-l-[1px] rounded-r-3xl border-zinc-700 transition hover:bg-zinc-500 hover:cursor-pointer"
+            class="px-3 py-2 sm:py-3 border-solid border-l-[1px] rounded-r-xl sm:rounded-r-3xl border-zinc-700 transition hover:bg-zinc-500 hover:cursor-pointer"
             id="copyButton"
           >
             <CopyIcon id="default-icon" class="size-4" />
