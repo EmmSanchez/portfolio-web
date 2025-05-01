@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
+import { Code, Server } from "lucide-react";
 
 interface Project {
   id: number;
@@ -13,7 +14,10 @@ interface Project {
     icon_alt: string;
   }[];
   link?: string;
-  repository?: string;
+  repository?: {
+    frontend: string;
+    backend?: string;
+  };
   image: string;
   image_alt: string;
 }
@@ -54,6 +58,37 @@ const TAGS = {
     icon: "/icons/vitejs.svg",
     icon_alt: "Vite.js Logo",
   },
+
+  THREEJS: {
+    name: "Three.js",
+    icon: "/icons/threejs.svg",
+    icon_alt: "Three.js Logo",
+  },
+  FRAMER: {
+    name: "Framer Motion",
+    icon: "/icons/framer.svg",
+    icon_alt: "Framer Motion Logo",
+  },
+  ZUSTAND: {
+    name: "Zustand",
+    icon: "/icons/zustand.svg",
+    icon_alt: "Zustand Logo",
+  },
+  EXPRESS: {
+    name: "Express.js",
+    icon: "/icons/expressjs.svg",
+    icon_alt: "Express.js Logo",
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    icon: "/icons/postgresql.svg",
+    icon_alt: "PostgreSQL Logo",
+  },
+  RAILWAY: {
+    name: "Railway",
+    icon: "/icons/railway.svg",
+    icon_alt: "Railway Logo",
+  },
 };
 
 const PROJECTS = [
@@ -67,13 +102,56 @@ const PROJECTS = [
       "Plataforma de gestión de usuarios importando archivos excel.",
     technologies: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.MONGODB],
     link: "https://read-excel-page.vercel.app/",
-    image: "/images/datasheet_manager_black.webp",
+    image: "/images/datasheet_manager_3x.webp",
     mockup: "/images/datasheet_manager_3x.webp",
     image_alt: "Imagen de la aplicación DataSheet Manager",
     status: "completado",
   },
   {
     id: 2,
+    title: "Solana Stack Game",
+    shortTitle: "Stack Game",
+    description:
+      "SkyStacks es un juego web 3D interactivo en Solana donde apilas bloques para ganar recompensas. Construido con React, Three.js, Zustand y Framer Motion.",
+    shortDescription: "Juego 3D de apilar bloques con conexión a Solana.",
+    technologies: [
+      TAGS.VITE,
+      TAGS.REACT,
+      TAGS.THREEJS,
+      TAGS.FRAMER,
+      TAGS.TAILWIND,
+      TAGS.ZUSTAND,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+      TAGS.RAILWAY,
+    ],
+    link: "https://www.skystacksgame.com/",
+    repository: {
+      frontend: "https://github.com/EmmSanchez/solana_stack_game",
+      backend: "https://github.com/EmmSanchez/solana_stack_game_api",
+    },
+    image: "/images/stack_game_mockup.jpeg",
+    mockup: "/images/stack_game_mockup.jpeg",
+    image_alt: "Imagen de la aplicación SkyStacks",
+    status: "completado",
+  },
+  {
+    id: 3,
+    title: "Chat bot",
+    shortTitle: "Quizz App",
+    description:
+      "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
+    shortDescription:
+      "Plataforma de gestión de usuarios importando archivos excel.",
+    technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
+    link: "https://enlace-del-proyecto.com",
+    image: "/images/ejemplo.png",
+    mockup: "/images/ejemplo.png",
+    image_alt: "Imagen de la aplicación DataSheet Manager",
+    status: "completado",
+  },
+  {
+    id: 4,
     title: "Aplicacion de Preguntas",
     shortTitle: "Quizz App",
     description:
@@ -82,7 +160,24 @@ const PROJECTS = [
       "Plataforma de gestión de usuarios importando archivos excel.",
     technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
     link: "https://enlace-del-proyecto.com",
-    repository: "https://github.com/EmmSanchez/quiz-app",
+    repository: {
+      frontend: "https://github.com/EmmSanchez/quiz-app",
+    },
+    image: "/images/ejemplo.png",
+    mockup: "/images/ejemplo.png",
+    image_alt: "Imagen de la aplicación DataSheet Manager",
+    status: "completado",
+  },
+  {
+    id: 5,
+    title: "Bolsan",
+    shortTitle: "Quizz App",
+    description:
+      "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
+    shortDescription:
+      "Plataforma de gestión de usuarios importando archivos excel.",
+    technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
+    link: "https://enlace-del-proyecto.com",
     image: "/images/ejemplo.png",
     mockup: "/images/ejemplo.png",
     image_alt: "Imagen de la aplicación DataSheet Manager",
@@ -161,7 +256,7 @@ export function Projects() {
             </ul>
             <div className="flex flex-row flex-wrap gap-4 mb-4">
               {selectedProject.link && (
-                <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition hover:bg-zinc-900">
+                <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border-solid border-[1px] border-transparent hover:border-zinc-400">
                   <img
                     src="/icons/external-link.svg"
                     alt="External Link Icon"
@@ -172,14 +267,45 @@ export function Projects() {
                   </a>
                 </button>
               )}
-              {selectedProject.repository && (
-                <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
-                  <img src="/icons/brand-github.svg" alt="Github Brand Icon" />
-                  <a href={selectedProject.repository} target="_blank">
-                    <span className="max-sm:hidden">Repositorio de</span> GitHub
-                  </a>
-                </button>
-              )}
+              {selectedProject.repository &&
+                (selectedProject.repository.frontend &&
+                selectedProject.repository.backend ? (
+                  <>
+                    <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
+                      <Code className="size-4" />
+                      <a
+                        href={selectedProject.repository.frontend}
+                        target="_blank"
+                      >
+                        <span className="max-sm:hidden">Repositorio </span>{" "}
+                        Frontend
+                      </a>
+                    </button>
+
+                    <button className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
+                      <Server className="size-4" />
+                      <a
+                        href={selectedProject.repository.backend}
+                        target="_blank"
+                      >
+                        <span className="max-sm:hidden">Repositorio </span>{" "}
+                        Backend
+                      </a>
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
+                      <a
+                        href={selectedProject.repository.frontend}
+                        target="_blank"
+                      >
+                        <span className="max-sm:hidden">Repositorio de</span>{" "}
+                        GitHub
+                      </a>
+                    </button>
+                  </>
+                ))}
             </div>
           </div>
         </div>
@@ -189,7 +315,7 @@ export function Projects() {
           {PROJECTS.map((project, index) => (
             <div key={index} className="flex flex-col gap-2">
               <img
-                src={project.image}
+                src={project.mockup}
                 alt={project.image_alt}
                 className="size-full rounded-md transition ease-out duration-500 hover:cursor-pointer hover:-translate-y-2"
                 onClick={(e) => handleSelectProject(e, project.id)}
