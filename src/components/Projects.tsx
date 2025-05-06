@@ -89,6 +89,31 @@ const TAGS = {
     icon: "/icons/railway.svg",
     icon_alt: "Railway Logo",
   },
+  SUPABASE: {
+    name: "Supabase",
+    icon: "/icons/supabase.svg",
+    icon_alt: "Supabase Logo",
+  },
+  SHADCN: {
+    name: "Shadcn/ui",
+    icon: "/icons/shadcn.svg",
+    icon_alt: "Shadcn Logo",
+  },
+  HTML: {
+    name: "HTML5",
+    icon: "/icons/html5.svg",
+    icon_alt: "HTML5 Logo",
+  },
+  CSS: {
+    name: "CSS",
+    icon: "/icons/css.svg",
+    icon_alt: "CSS Logo",
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: "/icons/javascript.svg",
+    icon_alt: "JavaScript Logo",
+  },
 };
 
 const PROJECTS = [
@@ -97,13 +122,13 @@ const PROJECTS = [
     title: "Plataforma Web de Gestión de Excel",
     shortTitle: "Gestor de Excel",
     description:
-      "Aplicación desarrollada para una empresa, diseñada para la administración eficiente de datos en Excel, con gestión de usuarios y roles. Los datos se presentan en una tabla editable, filtrable y ordenable.",
+      "Aplicación desarrollada para una empresa, diseñada para la administración eficiente de datos a partir de un archivo Excel, con gestión de usuarios y roles. Los datos se presentan en una tabla editable, filtrable y ordenable.",
     shortDescription:
       "Plataforma de gestión de usuarios importando archivos excel.",
     technologies: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.MONGODB],
     link: "https://read-excel-page.vercel.app/",
-    image: "/images/datasheet_manager_3x.webp",
-    mockup: "/images/datasheet_manager_3x.webp",
+    image: "/images/excel_main.jpeg",
+    mockup: "/images/excel_mockup.jpeg",
     image_alt: "Imagen de la aplicación DataSheet Manager",
     status: "completado",
   },
@@ -130,57 +155,77 @@ const PROJECTS = [
       frontend: "https://github.com/EmmSanchez/solana_stack_game",
       backend: "https://github.com/EmmSanchez/solana_stack_game_api",
     },
-    image: "/images/stack_game_mockup.jpeg",
+    image: "/images/stack_game_main_4.jpeg",
     mockup: "/images/stack_game_mockup.jpeg",
     image_alt: "Imagen de la aplicación SkyStacks",
     status: "completado",
   },
   {
     id: 3,
-    title: "Chat bot",
-    shortTitle: "Quizz App",
+    title: "Chat Bot Asistente",
+    shortTitle: "Chat Bot",
     description:
-      "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
+      "Chatbot con IA desarrollado en Next.js y TypeScript. Usa la API de OpenAI, componentes de Shadcn y la autenticación con Privy.",
     shortDescription:
-      "Plataforma de gestión de usuarios importando archivos excel.",
-    technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
-    link: "https://enlace-del-proyecto.com",
-    image: "/images/ejemplo.png",
-    mockup: "/images/ejemplo.png",
-    image_alt: "Imagen de la aplicación DataSheet Manager",
+      "Asistente conversacional con IA, autenticación y persistencia de datos. Interfaz moderna y experiencia fluida.",
+    technologies: [
+      TAGS.NEXT,
+      TAGS.TYPESCRIPT,
+      TAGS.SHADCN,
+      TAGS.FRAMER,
+      TAGS.TAILWIND,
+      TAGS.ZUSTAND,
+      TAGS.POSTGRESQL,
+      TAGS.RAILWAY,
+    ],
+    link: "https://chatbot-eight-blond.vercel.app/",
+    repository: {
+      frontend: "https://github.com/EmmSanchez/chatbot",
+    },
+    image: "/images/lumen_ai_main.jpeg",
+    mockup: "/images/lumen_ai_mockup.jpeg",
+    image_alt: "Imagen de Asistente Virtual Lumen AI",
     status: "completado",
   },
   {
     id: 4,
-    title: "Aplicacion de Preguntas",
-    shortTitle: "Quizz App",
+    title: "Quiz de Programación",
+    shortTitle: "Quiz App",
     description:
-      "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
-    shortDescription:
-      "Plataforma de gestión de usuarios importando archivos excel.",
-    technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
-    link: "https://enlace-del-proyecto.com",
+      "Quode es una app interactiva para responder preguntas de programación para poner a prueba tu lógica y sintaxis.",
+    shortDescription: "Responde preguntas técnicas según lenguaje y nivel.",
+    technologies: [
+      TAGS.VITE,
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.EXPRESS,
+      TAGS.POSTGRESQL,
+      TAGS.RAILWAY,
+      TAGS.SUPABASE,
+    ],
+    link: "https://quiz-app-web-plum.vercel.app/",
     repository: {
-      frontend: "https://github.com/EmmSanchez/quiz-app",
+      frontend: "https://github.com/EmmSanchez/quiz-app-web",
+      backend: "https://github.com/EmmSanchez/quiz_api",
     },
-    image: "/images/ejemplo.png",
-    mockup: "/images/ejemplo.png",
-    image_alt: "Imagen de la aplicación DataSheet Manager",
+    image: "/images/quizzapp_main.jpeg",
+    mockup: "/images/quizzapp_mockup.jpeg",
+    image_alt: "Vista previa del sitio web de Quode",
     status: "completado",
   },
   {
     id: 5,
-    title: "Bolsan",
-    shortTitle: "Quizz App",
+    title: "Maquinaria Bolsan",
+    shortTitle: "Landing Bolsan",
     description:
-      "Aplicación de escritorio encargada de hacer preguntas sobre métodos númericos. Hecha con Electron, interfaz moderna y con sistema aleatorio de preguntas.",
+      "Landing page responsive para empresa de maquinaria industrial. HTML, CSS y JS puro. Página informativa con clientes reales.",
     shortDescription:
-      "Plataforma de gestión de usuarios importando archivos excel.",
-    technologies: [TAGS.VITE, TAGS.REACT, TAGS.TAILWIND, TAGS.ELECTRON],
-    link: "https://enlace-del-proyecto.com",
-    image: "/images/ejemplo.png",
-    mockup: "/images/ejemplo.png",
-    image_alt: "Imagen de la aplicación DataSheet Manager",
+      "Primera web profesional realizada. Página responsive con clientes reales para empresa de maquinaria de empaque.",
+    technologies: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    link: "https://bolsan.com.mx/index.html",
+    image: "/images/bolsan_main.jpeg",
+    mockup: "/images/bolsan_mockup.jpeg",
+    image_alt: "Vista previa del sitio web Bolsan",
     status: "completado",
   },
 ];
@@ -218,7 +263,7 @@ export function Projects() {
     <div className="lg:py-10">
       <h2 className="w-fit text-5xl font-bold my-8 sm:my-10">Proyectos</h2>
 
-      <div className="w-full rounded-2xl shadow-[0px_-20px_30px_-22px_rgba(0,0,0,0.3)] shadow-zinc-500/20 bg-gradient-to-b from-zinc-900 via-zinc-900 via-30% to-transparent">
+      <div className="w-full rounded-2xl shadow-[0px_-20px_30px_-22px_rgba(0,0,0,0.3)] shadow-zinc-500/20">
         {/* Selected Project */}
         <div className="relative w-full h-[460px] rounded-t-2xl -mb-4 overflow-hidden">
           <img
@@ -235,9 +280,11 @@ export function Projects() {
             <h3 className="text-[16px] min-[500px]:text-lg md:text-2xl sm:whitespace-nowrap font-extrabold mb-2">
               {selectedProject?.title}
             </h3>
+
             <p className="text-[12px] min-[500px]:text-sm md:text-base max-w-sm md:max-w-xl mb-2 text-pretty max-[350px]:hidden">
               {selectedProject.description}
             </p>
+
             <ul className="flex gap-1 mb-2">
               {selectedProject.technologies.map((tech, index) => {
                 return (
@@ -254,56 +301,63 @@ export function Projects() {
                 );
               })}
             </ul>
+
             <div className="flex flex-row flex-wrap gap-4 mb-4">
               {selectedProject.link && (
-                <button className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border-solid border-[1px] border-transparent hover:border-zinc-400">
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border border-transparent hover:border-zinc-400"
+                >
                   <img
                     src="/icons/external-link.svg"
                     alt="External Link Icon"
                     className="size-4 md:size-6"
                   />
-                  <a href={selectedProject.link} target="_blank">
-                    <span>Ver Demo</span>
-                  </a>
-                </button>
+                  <span>Visitar</span>
+                </a>
               )}
               {selectedProject.repository &&
                 (selectedProject.repository.frontend &&
                 selectedProject.repository.backend ? (
                   <>
-                    <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
+                    <a
+                      href={selectedProject.repository.frontend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                    >
                       <Code className="size-4" />
-                      <a
-                        href={selectedProject.repository.frontend}
-                        target="_blank"
-                      >
-                        <span className="max-sm:hidden">Repositorio </span>{" "}
-                        Frontend
-                      </a>
-                    </button>
+                      <span className="max-sm:hidden">Repositorio </span>
+                      Frontend
+                    </a>
 
-                    <button className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
+                    <a
+                      href={selectedProject.repository.backend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                    >
                       <Server className="size-4" />
-                      <a
-                        href={selectedProject.repository.backend}
-                        target="_blank"
-                      >
-                        <span className="max-sm:hidden">Repositorio </span>{" "}
-                        Backend
-                      </a>
-                    </button>
+                      <span className="max-sm:hidden">Repositorio </span>Backend
+                    </a>
                   </>
                 ) : (
                   <>
-                    <button className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md">
-                      <a
-                        href={selectedProject.repository.frontend}
-                        target="_blank"
-                      >
-                        <span className="max-sm:hidden">Repositorio de</span>{" "}
-                        GitHub
-                      </a>
-                    </button>
+                    <a
+                      href={selectedProject.repository.frontend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                    >
+                      <img
+                        src="/icons/brand-github.svg"
+                        alt="Github Brand Icon"
+                      />
+                      <span className="max-sm:hidden">Repositorio de</span>{" "}
+                      GitHub
+                    </a>
                   </>
                 ))}
             </div>
@@ -314,12 +368,14 @@ export function Projects() {
         <div className="grid gap-6 px-4 pb-4 relative z-10 projects-grid">
           {PROJECTS.map((project, index) => (
             <div key={index} className="flex flex-col gap-2">
-              <img
-                src={project.mockup}
-                alt={project.image_alt}
-                className="size-full rounded-md transition ease-out duration-500 hover:cursor-pointer hover:-translate-y-2"
-                onClick={(e) => handleSelectProject(e, project.id)}
-              />
+              <div className="h-44">
+                <img
+                  src={project.mockup}
+                  alt={project.image_alt}
+                  className="w-full h-full object-cover rounded-md transition ease-out duration-500 hover:cursor-pointer hover:-translate-y-2"
+                  onClick={(e) => handleSelectProject(e, project.id)}
+                />
+              </div>
               <h3 className="max-[400px]:text-[10px] text-xs sm:text-lg font-bold mb-2 whitespace-nowrap">
                 {project.shortTitle}
               </h3>
