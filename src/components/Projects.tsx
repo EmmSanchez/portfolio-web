@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 import { Code, Server } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 interface Project {
   id: number;
@@ -126,7 +127,7 @@ const PROJECTS = [
     shortDescription:
       "Plataforma de gestión de usuarios importando archivos excel.",
     technologies: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.MONGODB],
-    link: "https://read-excel-page.vercel.app/",
+    link: "https://read-excel-page-demo.vercel.app",
     image: "/images/excel_main.jpeg",
     mockup: "/images/excel_mockup.jpeg",
     image_alt: "Imagen de la aplicación DataSheet Manager",
@@ -155,7 +156,7 @@ const PROJECTS = [
       frontend: "https://github.com/EmmSanchez/solana_stack_game",
       backend: "https://github.com/EmmSanchez/solana_stack_game_api",
     },
-    image: "/images/stack_game_main_4.jpeg",
+    image: "/images/stack_game_main.jpeg",
     mockup: "/images/stack_game_mockup.jpeg",
     image_alt: "Imagen de la aplicación SkyStacks",
     status: "completado",
@@ -242,12 +243,7 @@ export function Projects() {
     e.preventDefault();
     if (id === selectedId) return;
 
-    setIsFading(true);
-
-    setTimeout(() => {
-      setSelectedId(id);
-      setIsFading(false);
-    }, 250);
+    setSelectedId(id);
   };
 
   useEffect(() => {
@@ -266,102 +262,121 @@ export function Projects() {
       <div className="w-full rounded-2xl shadow-[0px_-20px_30px_-22px_rgba(0,0,0,0.3)] shadow-zinc-500/20">
         {/* Selected Project */}
         <div className="relative w-full h-[460px] rounded-t-2xl -mb-4 overflow-hidden">
-          <img
-            src={selectedProject?.image}
-            alt={selectedProject?.image_alt}
-            className={`relative z-0 size-full object-cover rounded-t-xl transition-all duration-500 ease-in-out custom-mask ${isFading ? "opacity-20" : "opacity-100 scale-100"}`}
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={selectedProject?.id}
+              src={selectedProject?.image}
+              alt={selectedProject?.image_alt}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className={`relative z-0 size-full object-cover rounded-t-xl custom-mask`}
+            />
+          </AnimatePresence>
 
           <div className="absolute top-0 size-full rounded-t-xl shadow-inset"></div>
 
-          <div
-            className={`absolute top-0 flex flex-col justify-end transition-transform duration-500 items-start z-10 w-full h-full px-8 py-10 ${isFading ? "opacity-0 -translate-x-4" : "opacity-100 translate-x-0"}`}
-          >
-            <h3 className="text-[16px] min-[500px]:text-lg md:text-2xl sm:whitespace-nowrap font-extrabold mb-2">
-              {selectedProject?.title}
-            </h3>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`details-${selectedProject?.id}`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{
+                duration: 0.2,
+                ease: [0.32, 0.72, 0.39, 0.98], // Aceleración rápida + desaceleración suave
+                delay: 0.1,
+              }}
+              className={`absolute top-0 flex flex-col justify-end items-start z-10 w-full h-full px-8 py-10`}
+            >
+              <h3 className="text-[16px] min-[500px]:text-lg md:text-2xl sm:whitespace-nowrap font-extrabold mb-2">
+                {selectedProject?.title}
+              </h3>
 
-            <p className="text-[12px] min-[500px]:text-sm md:text-base max-w-sm md:max-w-xl mb-2 text-pretty max-[350px]:hidden">
-              {selectedProject.description}
-            </p>
+              <p className="text-[12px] min-[500px]:text-sm md:text-base max-w-sm md:max-w-xl mb-2 text-pretty max-[350px]:hidden">
+                {selectedProject.description}
+              </p>
 
-            <ul className="flex gap-1 mb-2">
-              {selectedProject.technologies.map((tech, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={`flex justify-between items-center p-2 gap-2 rounded-full`}
-                  >
-                    <img
-                      src={tech.icon}
-                      alt={tech.icon_alt}
-                      className="size-4 md:size-6"
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="flex flex-row flex-wrap gap-4 mb-4">
-              {selectedProject.link && (
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border border-transparent hover:border-zinc-400"
-                >
-                  <img
-                    src="/icons/external-link.svg"
-                    alt="External Link Icon"
-                    className="size-4 md:size-6"
-                  />
-                  <span>Visitar</span>
-                </a>
-              )}
-              {selectedProject.repository &&
-                (selectedProject.repository.frontend &&
-                selectedProject.repository.backend ? (
-                  <>
-                    <a
-                      href={selectedProject.repository.frontend}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
-                    >
-                      <Code className="size-4" />
-                      <span className="max-sm:hidden">Repositorio </span>
-                      Frontend
-                    </a>
-
-                    <a
-                      href={selectedProject.repository.backend}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
-                    >
-                      <Server className="size-4" />
-                      <span className="max-sm:hidden">Repositorio </span>Backend
-                    </a>
-                  </>
-                ) : (
-                  <>
-                    <a
-                      href={selectedProject.repository.frontend}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+              <ul className="flex gap-1 mb-2">
+                {selectedProject.technologies.map((tech, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className={`flex justify-between items-center p-2 gap-2 rounded-full`}
                     >
                       <img
-                        src="/icons/brand-github.svg"
-                        alt="Github Brand Icon"
+                        src={tech.icon}
+                        alt={tech.icon_alt}
+                        className="size-4 md:size-6"
                       />
-                      <span className="max-sm:hidden">Repositorio de</span>{" "}
-                      GitHub
-                    </a>
-                  </>
-                ))}
-            </div>
-          </div>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="flex flex-row flex-wrap gap-4 mb-4">
+                {selectedProject.link && (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border border-transparent hover:border-zinc-400"
+                  >
+                    <img
+                      src="/icons/external-link.svg"
+                      alt="External Link Icon"
+                      className="size-4 md:size-6"
+                    />
+                    <span>Visitar</span>
+                  </a>
+                )}
+                {selectedProject.repository &&
+                  (selectedProject.repository.frontend &&
+                  selectedProject.repository.backend ? (
+                    <>
+                      <a
+                        href={selectedProject.repository.frontend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                      >
+                        <Code className="size-4" />
+                        <span className="max-sm:hidden">Repositorio </span>
+                        Frontend
+                      </a>
+
+                      <a
+                        href={selectedProject.repository.backend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                      >
+                        <Server className="size-4" />
+                        <span className="max-sm:hidden">Repositorio </span>
+                        Backend
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <a
+                        href={selectedProject.repository.frontend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                      >
+                        <img
+                          src="/icons/brand-github.svg"
+                          alt="Github Brand Icon"
+                        />
+                        <span className="max-sm:hidden">Repositorio de</span>{" "}
+                        GitHub
+                      </a>
+                    </>
+                  ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* List of projects */}
