@@ -23,32 +23,6 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "Company",
-      "position": "President",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Started the company"
-      ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ]
-    }
-  ],
   "education": [
     {
       "institution": "University",
@@ -63,186 +37,117 @@
       ]
     }
   ],
-  "awards": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "url": "https://publication.com",
-      "summary": "Description…"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
-  ],
   "projects": [
     {
       "id": 1,
       "title": "Plataforma Web de Gestión de Excel",
       "shortTitle": "Gestor de Excel",
-      "description": "Aplicación desarrollada para una empresa, diseñada para la administración eficiente de datos en Excel, con gestión de usuarios y roles. Los datos se presentan en una tabla editable, filtrable y ordenable.",
+      "description": "Aplicación desarrollada para una empresa, diseñada para la administración eficiente de datos a partir de un archivo Excel, con gestión de usuarios y roles. Los datos se presentan en una tabla editable, filtrable y ordenable.",
       "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB",
-        "TailwindCSS"
+        "NEXT",
+        "TYPESCRIPT",
+        "TAILWIND",
+        "MONGODB"
       ],
-      "link": "https://enlace-del-proyecto.com",
-      "repository": "https://github.com/usuario/proyecto-policias",
-      "image": "/images/datasheet_manager_3x.webp",
-      "mockup": "/images/datasheet_manager_3x.webp",
+      "link": "https://read-excel-page-demo.vercel.app",
+      "image": "/images/excel_main.jpeg",
+      "mockup": "/images/excel_mockup.jpeg",
       "image_alt": "Imagen de la aplicación DataSheet Manager",
       "status": "completado"
     },
     {
       "id": 2,
-      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
-      "shortTitle": "Quizz App",
-      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
-      "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
+      "title": "Solana Stack Game",
+      "shortTitle": "Stack Game",
+      "description": "SkyStacks es un juego web 3D interactivo en Solana donde apilas bloques para ganar recompensas. Construido con React, Three.js, Zustand y Framer Motion.",
+      "shortDescription": "Juego 3D de apilar bloques con conexión a Solana.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB",
-        "JWT"
+        "VITE",
+        "REACT",
+        "THREEJS",
+        "FRAMER",
+        "TAILWIND",
+        "ZUSTAND",
+        "EXPRESS",
+        "POSTGRESQL",
+        "RAILWAY"
       ],
-      "link": "https://enlace-del-proyecto.com",
-      "repository": "https://github.com/usuario/proyecto-policias",
-      "image": "/images/datasheet_manager_black.webp",
-      "image_alt": "Imagen de la aplicación DataSheet Manager",
-      "date": "2024-08-10",
-      "tags": [
-        "Backend",
-        "Frontend",
-        "Autenticación",
-        "CRUD",
-        "Excel"
-      ],
+      "link": "https://www.skystacksgame.com/",
+      "repository": {
+        "frontend": "https://github.com/EmmSanchez/solana_stack_game",
+        "backend": "https://github.com/EmmSanchez/solana_stack_game_api"
+      },
+      "image": "/images/stack_game_main.jpeg",
+      "mockup": "/images/stack_game_mockup.jpeg",
+      "image_alt": "Imagen de la aplicación SkyStacks",
       "status": "completado"
     },
     {
       "id": 3,
-      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
-      "shortTitle": "DataSheet Manager",
-      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
-      "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
+      "title": "Chat Bot Asistente",
+      "shortTitle": "Chat Bot",
+      "description": "Chatbot con IA desarrollado en Next.js y TypeScript. Usa la API de OpenAI, componentes de Shadcn y la autenticación con Privy.",
+      "shortDescription": "Asistente conversacional con IA, autenticación y persistencia de datos. Interfaz moderna y experiencia fluida.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB",
-        "JWT"
+        "NEXT",
+        "TYPESCRIPT",
+        "SHADCN",
+        "FRAMER",
+        "TAILWIND",
+        "ZUSTAND",
+        "POSTGRESQL",
+        "RAILWAY"
       ],
-      "link": "https://enlace-del-proyecto.com",
-      "repository": "https://github.com/usuario/proyecto-policias",
-      "image": "/images/datasheet_manager_3x.webp",
-      "image_alt": "Imagen de la aplicación DataSheet Manager",
-      "date": "2024-08-10",
-      "tags": [
-        "Backend",
-        "Frontend",
-        "Autenticación",
-        "CRUD",
-        "Excel"
-      ],
+      "link": "https://chatbot-eight-blond.vercel.app/",
+      "repository": {
+        "frontend": "https://github.com/EmmSanchez/chatbot"
+      },
+      "image": "/images/lumen_ai_main.jpeg",
+      "mockup": "/images/lumen_ai_mockup.jpeg",
+      "image_alt": "Imagen de Asistente Virtual Lumen AI",
       "status": "completado"
     },
     {
       "id": 4,
-      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
-      "shortTitle": "DataSheet Manager",
-      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
-      "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
+      "title": "Quiz de Programación",
+      "shortTitle": "Quiz App",
+      "description": "Quode es una app interactiva para responder preguntas de programación para poner a prueba tu lógica y sintaxis.",
+      "shortDescription": "Responde preguntas técnicas según lenguaje y nivel.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB",
-        "JWT"
+        "VITE",
+        "REACT",
+        "TAILWIND",
+        "EXPRESS",
+        "POSTGRESQL",
+        "RAILWAY",
+        "SUPABASE"
       ],
-      "link": "https://enlace-del-proyecto.com",
-      "repository": "https://github.com/usuario/proyecto-policias",
-      "image": "/images/datasheet_manager_3x.webp",
-      "mockup": "/images/datasheet_manager_3x.webp",
-      "image_alt": "Imagen de la aplicación DataSheet Manager",
-      "date": "2024-08-10",
-      "tags": [
-        "Backend",
-        "Frontend",
-        "Autenticación",
-        "CRUD",
-        "Excel"
-      ],
+      "link": "https://quiz-app-web-plum.vercel.app/",
+      "repository": {
+        "frontend": "https://github.com/EmmSanchez/quiz-app-web",
+        "backend": "https://github.com/EmmSanchez/quiz_api"
+      },
+      "image": "/images/quizzapp_main.jpeg",
+      "mockup": "/images/quizzapp_mockup.jpeg",
+      "image_alt": "Vista previa del sitio web de Quode",
       "status": "completado"
     },
     {
       "id": 5,
-      "title": "Sistema de Gestión de Pruebas Físicas para Fuerzas Policiales",
-      "shortTitle": "Quizz App",
-      "description": "Desarrollé una aplicación integral que facilita la administración de datos de pruebas físicas para cuerpos policiales. La plataforma permite la gestión de usuarios y roles, autenticación segura, y la carga de información a través de archivos Excel o mediante una plantilla vacía. Los datos se procesan y presentan en una tabla editable, con soporte para operaciones CRUD, filtrado avanzado y ordenamiento dinámico, optimizando la eficiencia en la gestión de pruebas físicas.",
-      "shortDescription": "Plataforma de gestión de usuarios importando archivos excel.",
+      "title": "Maquinaria Bolsan",
+      "shortTitle": "Landing Bolsan",
+      "description": "Landing page responsive para empresa de maquinaria industrial. HTML, CSS y JS puro. Página informativa con clientes reales.",
+      "shortDescription": "Primera web profesional realizada. Página responsive con clientes reales para empresa de maquinaria de empaque.",
       "technologies": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB",
-        "JWT"
+        "HTML",
+        "CSS",
+        "JAVASCRIPT"
       ],
-      "link": "https://enlace-del-proyecto.com",
-      "repository": "https://github.com/usuario/proyecto-policias",
-      "image": "/images/datasheet_manager_black.webp",
-      "image_alt": "Imagen de la aplicación DataSheet Manager",
-      "date": "2024-08-10",
-      "tags": [
-        "Backend",
-        "Frontend",
-        "Autenticación",
-        "CRUD",
-        "Excel"
-      ],
+      "link": "https://bolsan.com.mx/index.html",
+      "image": "/images/bolsan_main.jpeg",
+      "mockup": "/images/bolsan_mockup.jpeg",
+      "image_alt": "Vista previa del sitio web Bolsan",
       "status": "completado"
     }
   ]

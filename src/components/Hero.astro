@@ -7,10 +7,10 @@ import CopyIcon from "../icons/CopyIcon.astro";
 import SocialPill from "./SocialPill.astro";
 import CheckIcon from "../icons/CheckIcon.astro";
 
-const { greeting, label, summary } = basics;
+const { greeting, label } = basics;
 ---
 
-<section class="flex pt-32 pb-28 max-[1024px]:pt-16 max-[1024px]:pb-2">
+<section id="contact" class="flex pt-32 pb-28 max-[1024px]:pt-16 max-[1024px]:pb-2">
   <div class="flex flex-row max-[940px]:flex-col w-full mx-auto justify-between items-center gap-8 max-[1024px]:gap-4">
     <div>
       <div class="flex flex-col">
@@ -51,12 +51,14 @@ const { greeting, label, summary } = basics;
             <p class="max-sm:hidden">LinkedIn</p>
           </SocialPill>
         </li>
+
         <li>
           <SocialPill href="https://github.com/EmmSanchez">
             <GitHubIcon class="size-4" />
             <p class="max-sm:hidden">GitHub</p>
           </SocialPill>
         </li>
+
         <li
           class="flex justify-center items-center border-solid border-[1px] border-zinc-700 rounded-xl sm:rounded-3xl"
         >
