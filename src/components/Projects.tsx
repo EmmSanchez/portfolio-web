@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 import {
-  AlignJustify,
-  AppWindow,
   Code,
   FolderOpen,
   LayoutGridIcon,
@@ -251,13 +249,17 @@ export function Projects() {
                       return (
                         <li
                           key={index}
-                          className={`flex justify-between items-center p-2 gap-2 rounded-full`}
+                          className="relative group flex justify-between items-center p-2 gap-2 rounded-full"
                         >
                           <img
                             src={tech.icon}
                             alt={tech.icon_alt}
                             className="size-4 md:size-6"
                           />
+                          {/* Tooltip */}
+                          <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 rounded-md bg-zinc-900 text-white text-sm font-medium px-2 py-1 border-solid border-[1px] border-zinc-700 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10">
+                            {tech.name}
+                          </div>
                         </li>
                       );
                     })}

@@ -3,10 +3,9 @@
     "name": "Emmanuel Sánchez Aranda",
     "greeting": "Hola, Soy Emmanuel",
     "label": "Desarrollador Web Front-End",
-    "image": "",
-    "email": "emmsanchezaranda@gmail.com",
+    "image": "/images/profile.webp",
+    "email": "esanchezaranda@outlook.com",
     "phone": "+52 8110611585",
-    "url": "https://johndoe.com",
     "summary": "Tengo más de 2 años desarrollando páginas web. Actualmente estoy cursando una Ingeniería en Tecnología de Software en la Universidad Autónoma de Nuevo León.",
     "location": {
       "address": "",
@@ -14,14 +13,7 @@
       "city": "Monterrey",
       "countryCode": "MEX",
       "region": "México"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "john",
-        "url": "https://twitter.com/john"
-      }
-    ]
+    }
   },
   "education": [
     {
@@ -51,8 +43,8 @@
         "MONGODB"
       ],
       "link": "https://read-excel-page-demo.vercel.app",
-      "image": "/images/excel_main.jpeg",
-      "mockup": "/images/excel_mockup.jpeg",
+      "image": "/images/excel_main.webp",
+      "mockup": "/images/excel_mockup.webp",
       "image_alt": "Imagen de la aplicación DataSheet Manager",
       "status": "completado"
     },
@@ -78,8 +70,8 @@
         "frontend": "https://github.com/EmmSanchez/solana_stack_game",
         "backend": "https://github.com/EmmSanchez/solana_stack_game_api"
       },
-      "image": "/images/stack_game_main.jpeg",
-      "mockup": "/images/stack_game_mockup.jpeg",
+      "image": "/images/stack_game_main.webp",
+      "mockup": "/images/stack_game_mockup.webp",
       "image_alt": "Imagen de la aplicación SkyStacks",
       "status": "completado"
     },
@@ -103,8 +95,8 @@
       "repository": {
         "frontend": "https://github.com/EmmSanchez/chatbot"
       },
-      "image": "/images/lumen_ai_main.jpeg",
-      "mockup": "/images/lumen_ai_mockup.jpeg",
+      "image": "/images/lumen_ai_main.webp",
+      "mockup": "/images/lumen_ai_mockup.webp",
       "image_alt": "Imagen de Asistente Virtual Lumen AI",
       "status": "completado"
     },
@@ -128,8 +120,8 @@
         "frontend": "https://github.com/EmmSanchez/quiz-app-web",
         "backend": "https://github.com/EmmSanchez/quiz_api"
       },
-      "image": "/images/quizzapp_main.jpeg",
-      "mockup": "/images/quizzapp_mockup.jpeg",
+      "image": "/images/quizzapp_main.webp",
+      "mockup": "/images/quizzapp_mockup.webp",
       "image_alt": "Vista previa del sitio web de Quode",
       "status": "completado"
     },
@@ -145,8 +137,8 @@
         "JAVASCRIPT"
       ],
       "link": "https://bolsan.com.mx/index.html",
-      "image": "/images/bolsan_main.jpeg",
-      "mockup": "/images/bolsan_mockup.jpeg",
+      "image": "/images/bolsan_main.webp",
+      "mockup": "/images/bolsan_mockup.webp",
       "image_alt": "Vista previa del sitio web Bolsan",
       "status": "completado"
     }
