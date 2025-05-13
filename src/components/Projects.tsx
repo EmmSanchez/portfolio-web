@@ -55,15 +55,31 @@ export function Projects() {
     getProjectInfoById(selectedId);
   }, [selectedId]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768 && viewMode !== "list") {
+        setViewMode("list");
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [viewMode]);
+
   return (
-    <section id="projects" className="pt-1 mt-28 w-[1020px]">
+    <section id="projects" className="pt-1 mt-28 w-full max-lg:px-4">
       <div className="flex w-full justify-between items-center">
-        <div className="flex items-center gap-4">
-          <FolderOpen className="size-8" />
-          <h2 className="w-fit text-4xl font-bold my-8 sm:my-10">Proyectos</h2>
+        <div className="flex items-center gap-4 max-sm:gap-2">
+          <FolderOpen className="size-8 max-sm:size-6" />
+          <h2 className="w-fit text-4xl max-sm:text-2xl font-bold my-8 sm:my-10">
+            Proyectos
+          </h2>
         </div>
 
-        <div className="relative flex z-10 items-center mt-4 rounded-md border-solid border-[1px] border-zinc-700">
+        <div className="relative flex z-10 items-center rounded-md border-solid border-[1px] border-zinc-700 max-md:hidden">
           <button
             onClick={() => {
               setViewMode("list");
@@ -88,25 +104,25 @@ export function Projects() {
           {PROJECTS.map((project, index) => {
             return (
               <article key={index} className="w-full rounded-2xl">
-                <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border-solid border-2 border-zinc-900">
+                <div className="relative w-full h-[280px] md:h-[400px] rounded-2xl overflow-hidden border-solid border-2 border-zinc-900">
                   <img
                     key={project?.id}
                     src={project?.image}
                     alt={project?.image_alt}
-                    className={`relative z-0 size-full object-cover rounded-t-xl custom-mask`}
+                    className={`relative z-0 size-full object-cover rounded-t-xl`}
                   />
 
                   <div className="absolute top-0 size-full rounded-t-xl shadow-inset"></div>
 
                   <div
                     key={`details-${project?.id}`}
-                    className={`absolute top-0 flex flex-col justify-end items-start w-full h-full px-8 pt-10 pb-4`}
+                    className={`absolute top-0 flex flex-col justify-end items-start w-full h-full max-[400px]:px-2 px-8 pt-10 pb-4`}
                   >
-                    <h3 className="text-[16px] min-[500px]:text-lg md:text-2xl sm:whitespace-nowrap font-extrabold mb-2">
+                    <h3 className="text-base min-[500px]:text-lg md:text-2xl sm:whitespace-nowrap font-extrabold mb-2">
                       {project?.title}
                     </h3>
 
-                    <p className="text-[12px] min-[500px]:text-sm md:text-base max-w-sm md:max-w-xl mb-2 text-pretty max-[350px]:hidden">
+                    <p className="text-xs min-[500px]:text-sm md:text-base max-w-sm md:max-w-xl mb-2 text-pretty max-[350px]:hidden">
                       {project.description}
                     </p>
 
@@ -128,20 +144,24 @@ export function Projects() {
                       })}
                     </ul>
 
-                    <div className="flex flex-row flex-wrap gap-4 mb-4">
+                    <div className="flex flex-row flex-wrap gap-4 max-md:gap-2 mb-4">
                       {project.link && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex justify-center items-center gap-2 bg-zinc-950 h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md transition border border-transparent hover:border-zinc-400"
+                          className="flex justify-center items-center gap-2 bg-zinc-950 sm:h-10 px-2 py-2 md:px-4 md:py-2 text-xs md:text-sm font-medium rounded-md transition border border-transparent hover:border-zinc-400"
                         >
                           <img
                             src="/icons/external-link.svg"
                             alt="External Link Icon"
                             className="size-4 md:size-6"
                           />
-                          <span>Visitar</span>
+                          <span
+                            className={`${!project.repository?.backend ? "" : "max-sm:hidden "}`}
+                          >
+                            Visitar
+                          </span>
                         </a>
                       )}
                       {project.repository &&
@@ -152,9 +172,9 @@ export function Projects() {
                               href={project.repository.frontend}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                              className="flex justify-center items-center gap-2 bg-white text-black sm:h-10 px-2 md:px-4 py-2 md:py-2 text-xs md:text-sm font-medium rounded-md"
                             >
-                              <Code className="size-4" />
+                              <Code className="size-4 max-sm:hidden" />
                               <span className="max-sm:hidden">
                                 Repositorio{" "}
                               </span>
@@ -165,9 +185,9 @@ export function Projects() {
                               href={project.repository.backend}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                              className="flex justify-center items-center gap-2 bg-white/20 backdrop-blur text-white sm:h-10 px-2 md:px-4 py-2 md:py-2 text-xs md:text-sm font-medium rounded-md"
                             >
-                              <Server className="size-4" />
+                              <Server className="size-4 max-sm:hidden" />
                               <span className="max-sm:hidden">
                                 Repositorio{" "}
                               </span>
@@ -180,11 +200,12 @@ export function Projects() {
                               href={project.repository.frontend}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex justify-center items-center gap-2 bg-white text-black h-10 px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium rounded-md"
+                              className="flex justify-center items-center gap-2 bg-white text-black sm:h-10 px-2 md:px-4 py-2 md:py-2 text-xs md:text-sm font-medium rounded-md"
                             >
                               <img
                                 src="/icons/brand-github.svg"
                                 alt="Github Brand Icon"
+                                className="max-sm:hidden"
                               />
                               <span className="max-sm:hidden">
                                 Repositorio de
