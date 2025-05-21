@@ -6,37 +6,4 @@
     <a href="#projects" id="nav-projects" class="px-1 py-1 min-[480px]:px-2 min-[480px]:py-2 tracking-wide transition hover:text-[#60efff]">Proyectos</a>
     <a href="#about-me" id="nav-about" class="whitespace-nowrap px-1 py-1 min-[480px]:px-2 min-[480px]:py-2 tracking-wide transition hover:text-[#60efff]">Sobre mí</a>
   </nav>
-
-  <script >
-    const sections = [
-      { id: 'projects', navId: 'nav-projects' },
-      { id: 'about-me', navId: 'nav-about' },
-      { id: 'contact', navId: 'nav-contact' },
-    ];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const navLink = document.getElementById(`nav-${entry.target.id}`);
-          if (navLink) {
-            if (entry.isIntersecting) {
-              sections.forEach(({ navId }) => {
-                const el = document.getElementById(navId);
-                el?.classList.remove('text-[#60efff]');
-              });
-              navLink.classList.add('text-[#60efff]');
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.6,
-      }
-    );
-
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-  </script>
 </header>

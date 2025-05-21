@@ -70,7 +70,7 @@ export function Projects() {
   }, [viewMode]);
 
   return (
-    <section id="projects" className="pt-1 mt-28 w-full max-lg:px-4">
+    <section id="projects" className="pt-1 mt-10 sm:mt-28 w-full max-lg:px-4">
       <div className="flex w-full justify-between items-center">
         <div className="flex items-center gap-4 max-sm:gap-2">
           <FolderOpen className="size-8 max-sm:size-6" />
@@ -109,7 +109,7 @@ export function Projects() {
                     key={project?.id}
                     src={project?.image}
                     alt={project?.image_alt}
-                    className={`relative z-0 size-full object-cover rounded-t-xl`}
+                    className={`relative z-0 size-full object-cover rounded-t-xl ${project.id === 4 || project.id === 5 ? "opacity-60 custom-mask" : ""}`}
                   />
 
                   <div className="absolute top-0 size-full rounded-t-xl shadow-inset"></div>
@@ -132,12 +132,12 @@ export function Projects() {
                         return (
                           <li
                             key={index}
-                            className={`flex justify-between items-center p-2 gap-2 rounded-full`}
+                            className={`flex justify-between items-center p-[2px] sm:p-2`}
                           >
                             <img
                               src={tech.icon}
                               alt={tech.icon_alt}
-                              className="size-4 md:size-6"
+                              className="size-4 sm:size-5 md:size-6"
                             />
                           </li>
                         );
