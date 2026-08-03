@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import { Projects } from "../components/Projects";
 import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout title="Portafolio de EmmSanchez - Desarrollador Web Junior">
@@ -11,6 +12,7 @@ import About from "../components/About.astro";
     <div class="max-w-5xl mx-auto max-[1070px]:mx-3">
       <Header />
       <Hero />
+      <Experience />
       <Projects client:load />
       <About />
     </div>

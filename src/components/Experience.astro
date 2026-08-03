@@ -1,0 +1,130 @@
+---
+import { Briefcase } from 'lucide-react';
+import { work } from '../cv.json';
+
+// Espera algo como:
+// "work": [
+//   {
+//     "name": "Empresa X",
+//     "position": "Full Stack Developer",
+//     "startDate": "2023-06",
+//     "endDate": "2024-08",           // omite o deja null si es el trabajo actual
+//     "summary": "Breve descripción del rol.",
+//     "highlights": ["Logro 1", "Logro 2"],
+//     "technologies": ["React", "Node.js", "PostgreSQL"]
+//   }
+// ]
+
+function formatDate(dateStr: string | undefined) {
+  if (!dateStr) return "Actual";
+  const [year, month] = dateStr.split("-");
+  const meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+  return `${meses[parseInt(month, 10) - 1]} ${year}`;
+}
+---
+
+<section id="experience" class="w-full mt-10 sm:mt-32 mb-20 max-lg:px-4">
+  <div class="flex items-center gap-4 max-sm:gap-2">
+    <Briefcase className="size-8 max-sm:size-6" />
+    <h2 class="w-fit text-4xl max-sm:text-2xl font-bold my-8 sm:my-10">Experiencia</h2>
+  </div>
+
+  <ol class="relative flex flex-col gap-6 sm:gap-12">
+    {work.map((job: any, index: number) => {
+      const isCurrent = !job.endDate;
+      const isLast = index === work.length - 1;
+
+      return (
+        <li class="group relative pl-9 sm:pl-12">
+          {/* Línea del timeline: delgada y con fade, no compite con el contenido */}
+          {!isLast && (
+            <span
+              class="absolute left-[7px] sm:left-[9px] top-8 bottom-[-1.5rem] sm:bottom-[-2rem] w-px bg-gradient-to-b from-zinc-800 to-zinc-800/0"
+              aria-hidden="true"
+            />
+          )}
+
+          {/* Punto marcador */}
+          <span
+            class:list={[
+              "absolute left-0 top-6 flex items-center justify-center rounded-full size-[15px] sm:size-[19px] border transition-colors duration-300",
+              isCurrent
+                ? "border-[#60efff]/40 bg-[#60efff]/[0.08]"
+                : "border-zinc-800 bg-zinc-950 group-hover:border-zinc-700",
+            ]}
+            aria-hidden="true"
+          >
+            <span
+              class:list={[
+                "rounded-full size-[5px]",
+                isCurrent ? "bg-[#60efff] animate-pulse" : "bg-zinc-600",
+              ]}
+            />
+          </span>
+
+          {/* Card */}
+          <div
+            class:list={[
+              "relative rounded-xl border p-5 sm:p-6 transition-all duration-300",
+              isCurrent
+                ? "border-[#60efff]/15 bg-[#60efff]/[0.02] hover:border-[#60efff]/30 hover:bg-[#60efff]/[0.04]"
+                : "border-zinc-800/70 bg-zinc-900/20 hover:border-zinc-700 hover:bg-zinc-900/40",
+            ]}
+          >
+            <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+              <div class="flex flex-col gap-1">
+                <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  {job.name}
+                </h3>
+                <p class="text-sm text-zinc-400 font-medium">{job.position}</p>
+              </div>
+
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="font-mono text-xs text-zinc-500 tracking-tight">
+                  {formatDate(job.startDate)} – {formatDate(job.endDate)}
+                </span>
+                {isCurrent && (
+                  <span class="px-2 py-0.5 rounded-full text-[11px] font-medium text-[#60efff] bg-[#60efff]/10 border border-[#60efff]/25">
+                    Actual
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {job.summary && (
+              <p class="text-[15px] text-zinc-400 leading-relaxed mt-6 max-w-2xl">
+                {job.summary}
+              </p>
+            )}
+
+            {job.highlights?.length > 0 && (
+              <p class="text-[13px] text-zinc-500 mt-2 tracking-tight">
+                {job.highlights.map((point: string, i: number) => (
+                  <>
+                    <span>{point}</span>
+                    {i < job.highlights.length - 1 && <span class="mx-2 text-zinc-700">·</span>}
+                  </>
+                ))}
+              </p>
+            )}
+
+            {job.technologies?.length > 0 && (
+              <ul class="flex flex-wrap items-center gap-1.5 mt-10">
+                {job.technologies.map((tech: string, i: number) => (
+                  <>
+                    <li class="text-[12px] font-medium text-zinc-500 transition-colors duration-200 hover:text-[#60efff]">
+                      {tech}
+                    </li>
+                    {i < job.technologies.length - 1 && (
+                      <span class="text-zinc-800 text-xs" aria-hidden="true">/</span>
+                    )}
+                  </>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+</section>

@@ -2,7 +2,7 @@
   "basics": {
     "name": "Emmanuel Sánchez Aranda",
     "greeting": "Hola, Soy Emmanuel",
-    "label": "Desarrollador Web Front-End",
+    "label": "Full Stack Developer",
     "image": "/images/profile.webp",
     "email": "esanchezaranda@outlook.com",
     "phone": "+52 8110611585",
@@ -141,6 +141,49 @@
       "mockup": "/images/bolsan_mockup.webp",
       "image_alt": "Vista previa del sitio web Bolsan",
       "status": "completado"
+    }
+  ],
+  "work": [
+    {
+      "name": "Xperience Group Creative Company",
+      "position": "Full Stack Developer",
+      "startDate": "2025-09",
+      "summary": "Desarrollo y mantenimiento de aplicaciones web para el sector inmobiliario, creando interfaces modernas a partir de diseños en Figma e implementando APIs REST, autenticación con JWT, WebSockets e integraciones con servicios externos.",
+      "highlights": [
+        "Desarrollo de interfaces modernas, responsivas y optimizadas.",
+        "Integración con Google Maps, Google Sheets y otros servicios externos."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "Vite",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Supabase",
+        "Tailwind CSS",
+        "Git"
+      ]
+    },
+    {
+      "name": "Facultad de Organización Deportiva (UANL)",
+      "position": "Freelance Full Stack Developer",
+      "startDate": "2024-09",
+      "endDate": "2025-01",
+      "summary": "Diseñé y desarrollé desde cero un sistema web para gestionar y evaluar pruebas físicas, incluyendo autenticación, importación y exportación de datos en Excel y evaluación automática basada en reglas de negocio.",
+      "highlights": [
+        "Desarrollo completo de la aplicación desde cero.",
+        "Despliegue y mantenimiento del sistema."
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS"
+      ]
     }
   ]
 }
