@@ -42,7 +42,6 @@
         "TAILWIND",
         "MONGODB"
       ],
-      "link": "https://read-excel-page-demo.vercel.app",
       "image": "/images/excel_main.webp",
       "mockup": "/images/excel_mockup.webp",
       "image_alt": "Imagen de la aplicación DataSheet Manager",
