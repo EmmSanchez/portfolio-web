@@ -6,6 +6,7 @@ import SendIcon from "../icons/SendIcon.astro";
 import CopyIcon from "../icons/CopyIcon.astro";
 import SocialPill from "./SocialPill.astro";
 import CheckIcon from "../icons/CheckIcon.astro";
+import DownloadIcon from "../icons/DownloadIcon.astro";
 
 const { greeting, label } = basics;
 ---
@@ -46,6 +47,13 @@ const { greeting, label } = basics;
           <SocialPill href="https://github.com/EmmSanchez">
             <GitHubIcon class="size-4" />
             <p class="max-sm:hidden">GitHub</p>
+          </SocialPill>
+        </li>
+
+        <li>
+          <SocialPill href="/EmmanuelSanchezAranda_CV.pdf" download="CV-Emmanuel-Sanchez.pdf">
+            <DownloadIcon class="size-4" />
+            <p class="max-sm:hidden"><span>Descargar</span> CV</p>
           </SocialPill>
         </li>
 
